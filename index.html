@@ -64,7 +64,7 @@
     <!-- Top Navigation / Header -->
     <header class="bg-surface shadow-sm sticky top-0 z-10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Left side empty as requested (Removed Verification Portal + Blue Box) -->
+            <!-- Left side empty as requested -->
             <div></div> 
             
             <div class="text-sm text-slate-500">
@@ -84,85 +84,91 @@
 
         <form onsubmit="event.preventDefault();" class="space-y-6">
 
-            <!-- TILE 1: Criminal Search Preferences -->
+            <!-- TILE 1: County Criminal -->
             <div class="bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                 <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
                     <h3 class="font-semibold text-slate-700 flex items-center gap-2">
-                        <i class="fa-solid fa-gavel text-slate-400"></i> Criminal Search Preferences
+                        <i class="fa-solid fa-gavel text-slate-400"></i> County Criminal
                     </h3>
                 </div>
-                <div class="p-6 space-y-6">
-                    
-                    <!-- Row 1: County Criminal -->
-                    <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0">
-                        <label class="block text-sm font-semibold text-slate-800 mb-2">County Criminal</label>
-                        <p class="text-sm text-slate-500 mb-3">Do you wish to conduct a search for criminal records in all counties of residence for the past 7 years?</p>
-                        <div class="flex gap-4">
-                            <label class="cursor-pointer relative">
-                                <input type="radio" name="county_criminal" value="yes" class="custom-radio sr-only" checked>
-                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
-                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
-                                    Yes
-                                </div>
-                            </label>
-                            <label class="cursor-pointer relative">
-                                <input type="radio" name="county_criminal" value="no" class="custom-radio sr-only">
-                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
-                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
-                                    No
-                                </div>
-                            </label>
-                        </div>
+                <div class="p-6">
+                    <p class="text-sm text-slate-500 mb-4">Do you wish to conduct a search for criminal records in all counties of residence for the past 7 years?</p>
+                    <div class="flex gap-4">
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="county_criminal" value="yes" class="custom-radio sr-only" checked>
+                            <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                Yes
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="county_criminal" value="no" class="custom-radio sr-only">
+                            <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                No
+                            </div>
+                        </label>
                     </div>
-
-                    <!-- Row 2: State Criminal -->
-                    <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0">
-                        <label class="block text-sm font-semibold text-slate-800 mb-2">State Criminal</label>
-                        <p class="text-sm text-slate-500 mb-3">Do you wish to conduct a statewide criminal record search for all available states of residence?</p>
-                        <div class="flex gap-4">
-                            <label class="cursor-pointer relative">
-                                <input type="radio" name="state_criminal" value="yes" class="custom-radio sr-only" checked>
-                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
-                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
-                                    Yes
-                                </div>
-                            </label>
-                            <label class="cursor-pointer relative">
-                                <input type="radio" name="state_criminal" value="no" class="custom-radio sr-only">
-                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
-                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
-                                    No
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Row 3: Additional Addresses -->
-                    <div class="pb-2">
-                        <label class="block text-sm font-semibold text-slate-800 mb-2">Additional Address for County and State Criminal Searches</label>
-                        <p class="text-sm text-slate-500 mb-3">Should additional addresses found via SSN Trace be automatically added to the County and State criminal searches?</p>
-                        <div class="flex gap-4">
-                            <label class="cursor-pointer relative">
-                                <input type="radio" name="additional_address" value="yes" class="custom-radio sr-only" checked>
-                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
-                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
-                                    Yes
-                                </div>
-                            </label>
-                            <label class="cursor-pointer relative">
-                                <input type="radio" name="additional_address" value="no" class="custom-radio sr-only">
-                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
-                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
-                                    No
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
-            <!-- TILE 2: Employment Verification Through Vendor -->
+            <!-- TILE 2: State Criminal -->
+            <div class="bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+                    <h3 class="font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-building-columns text-slate-400"></i> State Criminal
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <p class="text-sm text-slate-500 mb-4">Do you wish to conduct a statewide criminal record search for all available states of residence?</p>
+                    <div class="flex gap-4">
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="state_criminal" value="yes" class="custom-radio sr-only" checked>
+                            <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                Yes
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="state_criminal" value="no" class="custom-radio sr-only">
+                            <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                No
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TILE 3: Additional Addresses -->
+            <div class="bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+                    <h3 class="font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot text-slate-400"></i> Additional Address for County and State Criminal Searches
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <p class="text-sm text-slate-500 mb-4">Should additional addresses found via SSN Trace be automatically added to the County and State criminal searches?</p>
+                    <div class="flex gap-4">
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="additional_address" value="yes" class="custom-radio sr-only" checked>
+                            <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                Yes
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="additional_address" value="no" class="custom-radio sr-only">
+                            <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                No
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TILE 4: Employment Verification Through Vendor -->
             <div class="bg-surface rounded-xl shadow-md border border-primary/20 ring-1 ring-primary/5 overflow-hidden transition-all duration-300 hover:shadow-lg">
                 <div class="bg-blue-50/50 px-6 py-4 border-b border-blue-100 flex justify-between items-center">
                     <h3 class="font-semibold text-slate-800 flex items-center gap-2">

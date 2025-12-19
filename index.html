@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Information</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb', // Blue-600
+                        secondary: '#475569', // Slate-600
+                        background: '#f8fafc', // Slate-50
+                        surface: '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        /* Custom Radio Button Styling */
+        .custom-radio:checked + div {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+            color: #1e40af;
+        }
+        .custom-radio:checked + div .radio-circle {
+            border-color: #2563eb;
+            background-color: #2563eb;
+            box-shadow: inset 0 0 0 3px #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen font-sans text-slate-800">
+
+    <!-- Top Navigation / Header -->
+    <header class="bg-surface shadow-sm sticky top-0 z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Left side empty as requested (Removed Verification Portal + Blue Box) -->
+            <div></div> 
+            
+            <div class="text-sm text-slate-500">
+                Step 3 of 4: Additional Info
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Page Title -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-900">Additional Information</h2>
+            <p class="text-slate-500 mt-1">Please review and configure the search parameters below.</p>
+        </div>
+
+        <form onsubmit="event.preventDefault();" class="space-y-6">
+
+            <!-- TILE 1: Criminal Search Preferences -->
+            <div class="bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
+                    <h3 class="font-semibold text-slate-700 flex items-center gap-2">
+                        <i class="fa-solid fa-gavel text-slate-400"></i> Criminal Search Preferences
+                    </h3>
+                </div>
+                <div class="p-6 space-y-6">
+                    
+                    <!-- Row 1: County Criminal -->
+                    <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0">
+                        <label class="block text-sm font-semibold text-slate-800 mb-2">County Criminal</label>
+                        <p class="text-sm text-slate-500 mb-3">Do you wish to conduct a search for criminal records in all counties of residence for the past 7 years?</p>
+                        <div class="flex gap-4">
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="county_criminal" value="yes" class="custom-radio sr-only" checked>
+                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                    Yes
+                                </div>
+                            </label>
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="county_criminal" value="no" class="custom-radio sr-only">
+                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                    No
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: State Criminal -->
+                    <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0">
+                        <label class="block text-sm font-semibold text-slate-800 mb-2">State Criminal</label>
+                        <p class="text-sm text-slate-500 mb-3">Do you wish to conduct a statewide criminal record search for all available states of residence?</p>
+                        <div class="flex gap-4">
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="state_criminal" value="yes" class="custom-radio sr-only" checked>
+                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                    Yes
+                                </div>
+                            </label>
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="state_criminal" value="no" class="custom-radio sr-only">
+                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                    No
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Additional Addresses -->
+                    <div class="pb-2">
+                        <label class="block text-sm font-semibold text-slate-800 mb-2">Additional Address for County and State Criminal Searches</label>
+                        <p class="text-sm text-slate-500 mb-3">Should additional addresses found via SSN Trace be automatically added to the County and State criminal searches?</p>
+                        <div class="flex gap-4">
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="additional_address" value="yes" class="custom-radio sr-only" checked>
+                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                    Yes
+                                </div>
+                            </label>
+                            <label class="cursor-pointer relative">
+                                <input type="radio" name="additional_address" value="no" class="custom-radio sr-only">
+                                <div class="px-4 py-2 border border-slate-300 rounded-lg flex items-center gap-2 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all">
+                                    <span class="radio-circle w-4 h-4 rounded-full border border-slate-400 block transition-all"></span>
+                                    No
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TILE 2: Employment Verification Through Vendor -->
+            <div class="bg-surface rounded-xl shadow-md border border-primary/20 ring-1 ring-primary/5 overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <div class="bg-blue-50/50 px-6 py-4 border-b border-blue-100 flex justify-between items-center">
+                    <h3 class="font-semibold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-primary"></i> Employment Verification Through Vendor
+                    </h3>
+                </div>
+                
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Field 1: Vendor -->
+                    <div class="col-span-1 md:col-span-2 lg:col-span-3">
+                        <label for="vendor_select" class="block text-sm font-medium text-slate-700 mb-1">Vendor <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <select id="vendor_select" name="vendor" class="form-select w-full border border-slate-300 rounded-lg px-3 py-2.5 text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors cursor-pointer bg-white shadow-sm">
+                                <option value="" disabled selected>Select a vendor...</option>
+                                <option value="equifax_worknumber">Equifax / The Work Number</option>
+                                <option value="experian">Experian</option>
+                            </select>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Select the third-party vendor used for verification.</p>
+                    </div>
+
+                    <!-- Field 2: employment_history_years -->
+                    <div class="col-span-1">
+                        <label for="employment_history_years" class="block text-sm font-medium text-slate-700 mb-1">Work History Duration <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <select id="employment_history_years" name="employment_history_years" class="form-select w-full border border-slate-300 rounded-lg px-3 py-2.5 text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors cursor-pointer bg-white shadow-sm">
+                                <option value="" disabled selected>Select duration...</option>
+                                <option value="1_year">Last 1 year</option>
+                                <option value="2_years">Last 2 years</option>
+                                <option value="3_years">Last 3 years</option>
+                                <option value="5_years">Last 5 years</option>
+                                <option value="complete">Complete available history (Equifax)</option>
+                            </select>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                            <i class="fa-regular fa-lightbulb text-yellow-500"></i> Maps to employer history depth
+                        </p>
+                    </div>
+
+                    <!-- Field 3: number_of_employers -->
+                    <div class="col-span-1">
+                        <label for="number_of_employers" class="block text-sm font-medium text-slate-700 mb-1">Number of Employers to Verify <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <select id="number_of_employers" name="number_of_employers" class="form-select w-full border border-slate-300 rounded-lg px-3 py-2.5 text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors cursor-pointer bg-white shadow-sm">
+                                <option value="" disabled selected>Select quantity...</option>
+                                <option value="most_recent">Most recent employer only</option>
+                                <option value="last_2">Last 2 employers</option>
+                                <option value="last_3">Last 3 employers</option>
+                                <option value="all_in_period">All employers in selected period</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <div class="pt-6 flex flex-col-reverse sm:flex-row sm:justify-end gap-3 border-t border-slate-200 mt-8">
+                <button type="button" class="px-6 py-2.5 rounded-lg text-slate-600 font-medium hover:bg-slate-100 transition-colors border border-transparent">
+                    Cancel
+                </button>
+                <button type="button" class="px-6 py-2.5 rounded-lg text-slate-700 font-medium border border-slate-300 bg-white hover:bg-slate-50 transition-colors shadow-sm">
+                    Back
+                </button>
+                <button type="submit" onclick="alert('Configuration Saved!')" class="px-6 py-2.5 rounded-lg text-white font-medium bg-primary hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                    <span>Submit</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Mobile responsiveness script for testing mainly -->
+    <script>
+        // Simple script to demonstrate interactivity
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real app, this would collect the data
+            const vendor = document.getElementById('vendor_select').value;
+            const history = document.getElementById('employment_history_years').value;
+            const count = document.getElementById('number_of_employers').value;
+
+            // Simple validation check
+            if(!vendor) {
+                const btn = e.target.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Check Fields';
+                btn.classList.add('bg-red-600');
+                btn.classList.remove('bg-primary');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-red-600');
+                    btn.classList.add('bg-primary');
+                }, 2000);
+            } else {
+                 console.log('Form Submitted');
+            }
+        });
+    </script>
+</body>
+</html>
